@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 52% 18%;
+    --foreground: 222 44% 60%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 21% 23%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 21% 23%;
+    
+    --primary: 358 100% 67%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 217 100% 62%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 271 84% 57%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 95%;
+    --muted-foreground: 222 21% 33%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 358 100% 67%;
+    
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 358 100% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 271 84% 57%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 215 27% 30%;
+    --sidebar-ring: 358 100% 67%;
+    
+    --chart-1: 358 100% 67%;
+    --chart-2: 217 100% 62%;
+    --chart-3: 271 84% 57%;
+    --chart-4: 125 55% 44%;
+    --chart-5: 35 92% 52%;
+    
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    image-rendering: pixelated;
+  }
+}
+
+@layer components {
+  .font-pixel {
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .font-body {
+    font-family: 'VT323', monospace;
+  }
+  
+  .font-ui {
+    font-family: 'Silkscreen', cursive;
+  }
+  
+  .shadow-pixel {
+    box-shadow: 4px 4px 0px rgb(198, 21, 21);
+  }
+  
+  .shadow-pixel-hover {
+    box-shadow: 2px 2px 0px rgba(233, 21, 21, 0.912);
+  }
+  
+  .pixel-border {
+    border-style: solid;
+    image-rendering: pixelated;
+    box-shadow: 0 0 0 2px #8e8585, inset 0 0 0 2px #000;
+  }
+  
+  .pixel-transition {
+    transition: all 0.2s steps(5);
+  }
+  
+  .dither-bg {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC');
+    background-repeat: repeat;
+  }
+}
+
+@keyframes pixel-bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-pixel-bounce {
+  animation: pixel-bounce 0.5s ease-in-out infinite alternate;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.animate-float:hover {
+  background-color: hsl(358, 100%, 67%); /* Bright red */
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}

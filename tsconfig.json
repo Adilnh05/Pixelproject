@@ -1,0 +1,26 @@
+{
+  "include": ["client/src/**/*", "shared/**/*", "server/**/*"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
+    "noEmit": true,
+    "module": "ESNext",
+    "strict": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/*": ["./client/src/*"],
+      "@shared/*": ["./shared/*"],
+      "@pixel/vite-plugin-shadcn-theme-json": ["./node_modules/@replit/vite-plugin-shadcn-theme-json"],
+      "@pixel/vite-plugin-cartographer": ["./node_modules/@replit/vite-plugin-cartographer"],
+      "@pixel/vite-plugin-runtime-error-modal": ["./node_modules/@replit/vite-plugin-runtime-error-modal"]
+    }
+  }
+}
